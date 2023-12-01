@@ -1,0 +1,69 @@
+@use '@styles/' as *;
+
+.jobInfo {
+	display: flex;
+	gap: 25px;
+	padding: 10px 0;
+	align-items: center;
+
+	img {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+	}
+
+	.jobDeets {
+		.topInfo {
+			font-weight: 700;
+			font-size: 1.4rem;
+			display: flex;
+			gap: 15px;
+			margin-bottom: 10px;
+			align-items: center;
+
+			h2 {
+				color: $primary-color;
+			}
+
+			.recent {
+				display: flex;
+				gap: 5px;
+				font-size: 1.2rem;
+				text-transform: uppercase;
+				color: $white;
+				align-items: center;
+
+				p {
+					border-radius: 13px;
+					padding: 6px 10px 3px;
+				}
+
+				p:nth-child(1) {
+					background-color: $primary-color;
+				}
+
+				p:nth-child(2) {
+					background-color: $dark-gray;
+				}
+			}
+		}
+
+		.jobName {
+			color: $dark-gray;
+			font-size: 2rem;
+			margin-bottom: 10px;
+		}
+
+		.timeInfo {
+			display: flex;
+			justify-content: space-between;
+			color: $light-gray;
+
+			li {
+				span {
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+}

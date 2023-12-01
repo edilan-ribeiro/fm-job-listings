@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+.homeContainer {
+	//width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $background-color;
+	align-items: center;
+
+	.contentContainer {
+		width: 100%;
+		max-width: 1440px;
+	}
+}
