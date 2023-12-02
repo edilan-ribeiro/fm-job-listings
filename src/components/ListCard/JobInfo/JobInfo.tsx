@@ -1,21 +1,20 @@
+import { ReactNode } from 'react'
 import styles from './JobInfoStyles.module.scss'
 
 interface JobInfo {
 	img: string
 	company: string
-	recent?: boolean
-	featured?: boolean
+	recent: boolean
+	featured: boolean
 	position: string
-	days: string
-	contractType: string
-	place: string
+	children: ReactNode
 }
 
-export const JobInfo = ({img, company,recent, featured, position, days, contractType, place,}: JobInfo) => {
+export const JobInfo = ({img, company,recent, featured, position, children}: JobInfo) => {
 	return (
 		<div className={styles.jobInfo}>
 			<img src={img} alt={`${company} logo`} />
-			<div className={styles.jobDeets}>
+			<div className={styles.jobDetails}>
 				<div>
 					<div className={styles.topInfo}>
 						<h2>{company}</h2>
@@ -26,23 +25,7 @@ export const JobInfo = ({img, company,recent, featured, position, days, contract
 					</div>
 					<h3 className={styles.jobName}>{position}</h3>
 				</div>
-				<ul className={styles.timeInfo}>
-					<li>
-						<p>{days}</p>
-					</li>
-					<li>
-						<p>
-							<span>•</span>
-							{contractType}
-						</p>
-					</li>
-					<li>
-						<p>
-							<span>•</span>
-							{place}
-						</p>
-					</li>
-				</ul>
+				{children}
 			</div>
 		</div>
 	)
