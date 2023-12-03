@@ -1,7 +1,6 @@
 @use '../variables' as *;
 
 .homeContainer {
-	//width: 100vw;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -11,5 +10,7 @@
 	.contentContainer {
 		width: 100%;
 		max-width: 1440px;
+		padding: 0 30px;
+		position: relative;
 	}
 }
