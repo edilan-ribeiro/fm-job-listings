@@ -1,4 +1,4 @@
-type StackData = {
+interface StackData {
 	id: number
 	company: string
 	logo: string
