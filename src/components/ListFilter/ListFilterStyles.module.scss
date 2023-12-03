@@ -1,0 +1,58 @@
+@use '@styles/' as *;
+
+.listFilter {
+	display: flex;
+	justify-content: space-between;
+	background-color: $white;
+	padding: 20px 50px;
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: 0 15px 15px 0px $shadow;
+	transform: translateY(-50%);
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 30px;
+
+	.clearBtn {
+		color: $light-gray;
+		font-size: 1.8rem;
+
+		&:hover {
+			color: $primary-color;
+			text-decoration: underline;
+		}
+	}
+}
+
+.selectedStack {
+	display: flex;
+	color: $primary-color;
+	display: flex;
+	align-items: center;
+	gap: 10px 20px;
+	flex-wrap: wrap;
+	max-width: 60%;
+
+	li {
+		display: flex;
+		align-items: center;
+		background-color: $table-filter-color;
+		border-radius: 5px;
+		font-weight: 700;
+		overflow: hidden;
+
+		p {
+			padding: 10px;
+		}
+
+		.removeFilterBtn {
+			background-color: $primary-color;
+			padding: 10px 10px;
+			color: aquamarine;
+			&:hover {
+				background-color: $dark-gray;
+			}
+		}
+	}
+}
