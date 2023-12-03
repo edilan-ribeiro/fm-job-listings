@@ -8,18 +8,29 @@ import { useState } from 'react'
 export const JobList = () => {
 	const [selectedStack, setSelectedStack] = useState<string[]>([])
 
-	function addStackToSelected(stackInfo :string) {
+	function addStackToSelected(stackInfo: string) {
 		if (!selectedStack.includes(stackInfo)) {
 			setSelectedStack((prevState) => [...prevState, stackInfo])
 		}
 	}
 
+	function removeSelected(selectedItem: string) {
+		setSelectedStack((prevState) => {
+			return prevState.filter(
+				(itemToBeRemoved) => itemToBeRemoved !== selectedItem
+			)
+		})
+	}
+
 	return (
 		<>
-			<ListFilter
-				selectedStack={selectedStack}
-				clearFilter={() => setSelectedStack([])}
-			/>
+			{selectedStack.length > 0 && (
+				<ListFilter
+					selectedItem={selectedStack}
+					clearFilter={() => setSelectedStack([])}
+					removeItem={removeSelected}
+				/>
+			)}
 			<ul className={styles.jobList}>
 				{jobsData.map((jobData, index) => (
 					<Cards.CardList key={jobData.id}>
