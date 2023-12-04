@@ -1,12 +1,7 @@
 import styles from './JobInfoStyles.module.scss'
+import { JobTimeInfos } from '../../../interfaces/interfaces'
 
-interface JobTimeInfo {
-	days: string
-	contractType: string
-	place: string
-}
-
-export const JobTimeInfo = ({ days, contractType, place }: JobTimeInfo) => {
+export const JobTimeInfo = ({ days, contractType, place }: JobTimeInfos) => {
 	return (
 		<ul className={styles.timeInfo}>
 			<li>

@@ -1,12 +1,7 @@
 import styles from './ListCardStyles.module.scss'
-import { ReactNode } from 'react'
+import { CardItems } from '../../interfaces/interfaces'
 
-interface cardItems {
-    children: ReactNode
-    key: number
-}
-
-export const ListCard = ({children} : cardItems) => {
+export const ListCard = ({children} : CardItems) => {
     return (
         <li className={styles.listCards}>
            {children}

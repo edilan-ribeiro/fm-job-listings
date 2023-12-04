@@ -1,13 +1,9 @@
 import styles from './ListFilterStyles.module.scss'
 import iconRemove from '/images/icon-remove.svg'
+import { ListFilters } from '../../interfaces/interfaces'
 
-interface listFilter {
-	selectedItem: string[]
-	clearFilter: React.MouseEventHandler
-	removeItem: (selectedItem:string) => void
-}
 
-export const ListFilter = ({ selectedItem, clearFilter, removeItem }: listFilter) => {
+export const ListFilter = ({ selectedItem, clearFilter, removeItem }: ListFilters) => {
 	return (
 		<div className={styles.listFilter}>
 			<ul className={styles.selectedItem}>

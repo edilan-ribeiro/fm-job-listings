@@ -1,11 +1,7 @@
 import styles from './StackInfoStyles.module.scss'
+import { StackInfos } from '../../../interfaces/interfaces'
 
-interface Stack {
-	stack: string[]
-	click: (stackInfo: string) => void
-}
-
-export const StackInfo = ({ stack, click }: Stack) => {
+export const StackInfo = ({ stack, click }: StackInfos) => {
 	return (
 		<ul className={styles.stackInfo}>
 			{stack.map((stackInfo, index) => (

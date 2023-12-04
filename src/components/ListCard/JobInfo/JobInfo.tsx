@@ -1,16 +1,8 @@
-import { ReactNode } from 'react'
 import styles from './JobInfoStyles.module.scss'
+import { JobInfos } from '../../../interfaces/interfaces'
 
-interface JobInfo {
-	img: string
-	company: string
-	recent: boolean
-	featured: boolean
-	position: string
-	children: ReactNode
-}
 
-export const JobInfo = ({img, company,recent, featured, position, children}: JobInfo) => {
+export const JobInfo = ({img, company,recent, featured, position, children}: JobInfos) => {
 	return (
 		<div className={styles.jobInfo}>
 			<img src={img} alt={`${company} logo`} />
