@@ -6,7 +6,7 @@ export const JobInfo = ({img, company,recent, featured, position, children}: Job
 	return (
 		<div className={styles.jobInfo}>
 			<img src={img} alt={`${company} logo`} />
-			<div className={styles.jobDetails}>
+			<div>
 				<div>
 					<div className={styles.topInfo}>
 						<h2>{company}</h2>

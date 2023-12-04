@@ -1,0 +1,13 @@
+@use '@styles/' as *;
+
+.jobName {
+	color: $dark-gray;
+	font-size: 1.8rem;
+	margin-bottom: 10px;
+
+	&:hover {
+		color: $primary-color;
+		transition: 0.3s ease-in-out;
+		cursor: pointer;
+	}
+}
