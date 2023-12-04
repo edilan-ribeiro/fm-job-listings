@@ -2,12 +2,23 @@
 
 .timeInfo {
 	display: flex;
-	justify-content: space-between;
+	gap: 15px;
 	color: $light-gray;
 
-	li {
-		span {
-			padding-right: 15px;
-		}
+	@include mobile {
+		gap: 8px;
+		width: 70%;
+	}
+}
+
+.mobileLine {
+	display: none;
+
+	@include mobile {
+		display: block;
+		height: 1px;
+		background-color: $light-gray;
+		border: none;
+		margin: 15px 0 5px;
 	}
 }

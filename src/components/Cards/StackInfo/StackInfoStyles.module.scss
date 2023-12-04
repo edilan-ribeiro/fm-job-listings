@@ -3,7 +3,6 @@
 .stackInfo {
 	color: $primary-color;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
 
@@ -16,11 +15,17 @@
 			height: 100%;
 			background-color: $table-filter-color;
 
-			&:hover {
-				background-color: $primary-color;
-				color: $white;
-				transition: 0.3s ease-in-out;
-			}
+				&:hover {
+					background-color: $primary-color;
+					color: $white;
+					transition: 0.3s ease-in-out;
+				}
+			
 		}
+	}
+
+	@include mobile {
+		flex-wrap: wrap;
+		padding-right: 20px;
 	}
 }

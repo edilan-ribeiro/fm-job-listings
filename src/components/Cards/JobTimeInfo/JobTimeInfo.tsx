@@ -3,22 +3,25 @@ import { JobTimeInfos } from '../../../types/interfaces'
 
 export const JobTimeInfo = ({ days, contractType, place }: JobTimeInfos) => {
 	return (
-		<ul className={styles.timeInfo}>
-			<li>
-				<p>{days}</p>
-			</li>
-			<li>
-				<p>
-					<span>•</span>
-					{contractType}
-				</p>
-			</li>
-			<li>
-				<p>
-					<span>•</span>
-					{place}
-				</p>
-			</li>
-		</ul>
+		<>
+			<ul className={styles.timeInfo}>
+				<li>
+					<p>{days}</p>
+				</li>
+				<li>
+					<p>•</p>
+				</li>
+				<li>
+					<p>{contractType}</p>
+				</li>
+				<li>
+					<p>•</p>
+				</li>
+				<li>
+					<p>{place}</p>
+				</li>
+			</ul>
+			<hr className={styles.mobileLine}/>
+		</>
 	)
 }

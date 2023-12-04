@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use '../index.scss' as *;
 
 .homeContainer {
 	min-height: 100vh;
@@ -12,5 +12,9 @@
 		max-width: 1440px;
 		padding: 0 30px;
 		position: relative;
+
+		@include mobile {
+			padding: 0 20px;
+		}
 	}
 }
