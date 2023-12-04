@@ -1,9 +1,9 @@
 import styles from './JobListStyles.module.scss'
 import jobsData from '../../data/data.json'
-import { groupStack } from '../../utils/groupStack'
 import { Cards } from './Cards'
 import { ListFilter } from '../ListFilter/ListFilter'
 import { useState } from 'react'
+import { Jobs } from '../../interfaces/interfaces'
 
 export const JobList = () => {
 	const [selectedStack, setSelectedStack] = useState<string[]>([])
@@ -22,6 +22,24 @@ export const JobList = () => {
 		})
 	}
 
+	function createStackAndCheckInclusion(jobData: Jobs) {
+		const stack = [
+			jobData.role,
+			jobData.level,
+			...jobData.languages,
+			...jobData.tools,
+		]
+		const isIncluded =
+			selectedStack.length === 0 ||
+			selectedStack.filter((stackItem) => stack.includes(stackItem)).length === selectedStack.length
+		return { stack, isIncluded }
+	}
+
+	const filteredJobs = jobsData.filter((jobData) => {
+		const { isIncluded } = createStackAndCheckInclusion(jobData)
+		return selectedStack.length === 0 || isIncluded
+	})
+
 	return (
 		<>
 			{selectedStack.length > 0 && (
@@ -32,27 +50,27 @@ export const JobList = () => {
 				/>
 			)}
 			<ul className={styles.jobList}>
-				{jobsData.map((jobData, index) => (
-					<Cards.CardList key={jobData.id}>
-						<Cards.Info.JobInfo
-							img={jobData.logo}
-							company={jobData.company}
-							recent={jobData.new}
-							featured={jobData.featured}
-							position={jobData.position}
-						>
-							<Cards.Info.JobTimeInfo
-								days={jobData.postedAt}
-								contractType={jobData.contract}
-								place={jobData.location}
-							/>
-						</Cards.Info.JobInfo>
-						<Cards.Stack
-							stack={groupStack(jobsData, index)}
-							click={addStackToSelected}
-						/>
-					</Cards.CardList>
-				))}
+				{filteredJobs.map((jobData) => {
+					const { stack } = createStackAndCheckInclusion(jobData)
+					return (
+						<Cards.CardList key={jobData.id}>
+							<Cards.Info.JobInfo
+								img={jobData.logo}
+								company={jobData.company}
+								recent={jobData.new}
+								featured={jobData.featured}
+								position={jobData.position}
+							>
+								<Cards.Info.JobTimeInfo
+									days={jobData.postedAt}
+									contractType={jobData.contract}
+									place={jobData.location}
+								/>
+							</Cards.Info.JobInfo>
+							<Cards.Stack stack={stack} click={addStackToSelected} />
+						</Cards.CardList>
+					)
+				})}
 			</ul>
 		</>
 	)
