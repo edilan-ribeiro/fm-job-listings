@@ -1,0 +1,13 @@
+@use '@styles/' as *;
+
+.timeInfo {
+	display: flex;
+	justify-content: space-between;
+	color: $light-gray;
+
+	li {
+		span {
+			padding-right: 15px;
+		}
+	}
+}

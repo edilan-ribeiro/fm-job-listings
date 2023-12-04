@@ -52,17 +52,11 @@
 			color: $dark-gray;
 			font-size: 2rem;
 			margin-bottom: 10px;
-		}
 
-		.timeInfo {
-			display: flex;
-			justify-content: space-between;
-			color: $light-gray;
-
-			li {
-				span {
-					padding-right: 15px;
-				}
+			&:hover {
+				color: $primary-color;
+				transition: 0.3s ease-in-out;
+				cursor: pointer;
 			}
 		}
 	}

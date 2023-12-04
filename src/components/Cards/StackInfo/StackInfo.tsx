@@ -1,5 +1,5 @@
 import styles from './StackInfoStyles.module.scss'
-import { StackInfos } from '../../../interfaces/interfaces'
+import { StackInfos } from '../../../types/interfaces'
 
 export const StackInfo = ({ stack, click }: StackInfos) => {
 	return (

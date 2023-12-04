@@ -19,6 +19,7 @@
 			&:hover {
 				background-color: $primary-color;
 				color: $white;
+				transition: 0.3s ease-in-out;
 			}
 		}
 	}

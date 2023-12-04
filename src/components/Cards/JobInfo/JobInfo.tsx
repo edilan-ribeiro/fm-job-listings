@@ -1,5 +1,5 @@
 import styles from './JobInfoStyles.module.scss'
-import { JobInfos } from '../../../interfaces/interfaces'
+import { JobInfos } from '../../../types/interfaces'
 
 
 export const JobInfo = ({img, company,recent, featured, position, children}: JobInfos) => {

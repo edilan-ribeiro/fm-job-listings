@@ -1,9 +1,8 @@
-import styles from './JobListStyles.module.scss'
 import jobsData from '../../data/data.json'
-import { Cards } from './Cards'
+import { Cards } from '../Cards/Cards'
 import { ListFilter } from '../ListFilter/ListFilter'
 import { useState } from 'react'
-import { Jobs } from '../../interfaces/interfaces'
+import { Jobs } from '../../types/interfaces'
 
 export const JobList = () => {
 	const [selectedStack, setSelectedStack] = useState<string[]>([])
@@ -49,11 +48,11 @@ export const JobList = () => {
 					removeItem={removeSelected}
 				/>
 			)}
-			<ul className={styles.jobList}>
+			<Cards.Wrapper>
 				{filteredJobs.map((jobData) => {
 					const { stack } = createStackAndCheckInclusion(jobData)
 					return (
-						<Cards.CardList key={jobData.id}>
+						<Cards.CardList key={jobData.id} isrecent={jobData.new}>
 							<Cards.Info.JobInfo
 								img={jobData.logo}
 								company={jobData.company}
@@ -71,7 +70,7 @@ export const JobList = () => {
 						</Cards.CardList>
 					)
 				})}
-			</ul>
+			</Cards.Wrapper>
 		</>
 	)
 }

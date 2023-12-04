@@ -49,9 +49,10 @@
 		.removeFilterBtn {
 			background-color: $primary-color;
 			padding: 10px 10px;
-			color: aquamarine;
+
 			&:hover {
 				background-color: $dark-gray;
+				transition: 0.3s ease-in-out;
 			}
 		}
 	}

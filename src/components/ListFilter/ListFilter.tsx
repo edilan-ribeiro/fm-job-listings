@@ -1,6 +1,6 @@
 import styles from './ListFilterStyles.module.scss'
 import iconRemove from '/images/icon-remove.svg'
-import { ListFilters } from '../../interfaces/interfaces'
+import { ListFilters } from '../../types/interfaces'
 
 
 export const ListFilter = ({ selectedItem, clearFilter, removeItem }: ListFilters) => {
@@ -11,7 +11,7 @@ export const ListFilter = ({ selectedItem, clearFilter, removeItem }: ListFilter
 					<li key={index}>
 						<p>{selectedItem}</p>
 						<button
-							onClick={ () => removeItem(selectedItem)}
+							onClick={() => removeItem(selectedItem)}
 							className={styles.removeFilterBtn}
 							title={`Removes ${selectedItem} from filter`}
 						>

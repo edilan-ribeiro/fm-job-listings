@@ -1,5 +1,5 @@
-import styles from './JobInfoStyles.module.scss'
-import { JobTimeInfos } from '../../../interfaces/interfaces'
+import styles from './JobTimeInfo.module.scss'
+import { JobTimeInfos } from '../../../types/interfaces'
 
 export const JobTimeInfo = ({ days, contractType, place }: JobTimeInfos) => {
 	return (
