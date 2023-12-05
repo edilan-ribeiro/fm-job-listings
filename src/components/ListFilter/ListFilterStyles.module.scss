@@ -1,4 +1,5 @@
 @use '@styles/' as *;
+@use './ListFilterItem' as *;
 
 .listFilter {
 	display: flex;
@@ -29,43 +30,5 @@
 	@include mobile {
 		margin: 0 20px;
 		padding: 10px 25px;
-	}
-}
-
-.selectedItem {
-	display: flex;
-	color: $primary-color;
-	display: flex;
-	align-items: center;
-	gap: 10px 20px;
-	flex-wrap: wrap;
-
-	li {
-		display: flex;
-		align-items: center;
-		background-color: $table-filter-color;
-		border-radius: 5px;
-		font-weight: 700;
-		overflow: hidden;
-
-		p {
-			padding: 8px;
-		}
-
-		.removeFilterBtn {
-			background-color: $primary-color;
-			padding: 8px 8px;
-
-			@include desktop {
-				&:hover {
-					background-color: $dark-gray;
-					transition: 0.3s ease-in-out;
-				}
-			}
-		}
-	}
-
-	@include mobile {
-		gap: 15px;
 	}
 }
